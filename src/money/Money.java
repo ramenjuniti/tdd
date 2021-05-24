@@ -11,7 +11,7 @@ class Money implements Expression {
         return new Money(amount * multiplier, currency);
     }
     Expression plus(Money added) {
-        return new Money(amount + added.amount, currency);
+        return new Sum(this, added);
     }
     String currency() {
         return currency;
