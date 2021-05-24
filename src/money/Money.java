@@ -1,6 +1,6 @@
 package money;
 
-class Money {
+class Money implements Expression {
     protected int amount;
     protected String currency;
     Money(int amount, String currency) {
@@ -10,8 +10,8 @@ class Money {
     Money times(int multiplier) {
         return new Money(amount * multiplier, currency);
     }
-    Money plus(Money addend) {
-        return new Money(amount + addend.amount, currency);
+    Expression plus(Money added) {
+        return new Money(amount + added.amount, currency);
     }
     String currency() {
         return currency;
