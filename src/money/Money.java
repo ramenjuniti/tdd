@@ -13,8 +13,8 @@ class Money implements Expression {
     Expression plus(Money added) {
         return new Sum(this, added);
     }
-    public Money reduce(String to) {
-        int rate = (currency.equals("CHF") && to.equals("USD")) ? 2 : 1;
+    public Money reduce(Bank bank, String to) {
+        int rate = bank.rate(currency, to);
         return new Money(amount / rate, to);
     }
     String currency() {
