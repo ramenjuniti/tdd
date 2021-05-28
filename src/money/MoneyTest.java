@@ -81,6 +81,6 @@ public class MoneyTest {
         bank.addRate("CHF", "USD", 2);
         Expression sum = new Sum(fiveBucks, tenFrancs).plus(fiveBucks);
         Money result = bank.reduce(sum, "USD");
-        assertEquals(Moneyy.dollar(15), result);
+        assertEquals(Money.dollar(15), result);
     }
 }
