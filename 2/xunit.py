@@ -1,3 +1,11 @@
+class TestResult:
+    def __init__(self):
+        self.runCount = 0
+    def testStarted(self):
+        self.runCount = self.runCount + 1
+    def summary(self):
+        return "%d run, 0 failed" % self.runCount
+
 class TestCase:
     def __init__(self, name):
         self.name = name
@@ -23,14 +31,6 @@ class WasRun(TestCase):
         raise Exception
     def tearDown(self):
         self.log = self.log + "tearDown "
-
-class TestResult:
-    def __init__(self):
-        self.runCount = 0
-    def testStarted(self):
-        self.runCount = self.runCount + 1
-    def summary(self):
-        return "%d run, 0 failed" % self.runCount
 
 class TestCaseTest(TestCase):
     def testTemplateMethod(self):
