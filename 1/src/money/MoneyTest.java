@@ -2,8 +2,6 @@ package money;
 
 import org.junit.jupiter.api.Test;
 
-import java.awt.event.MouseEvent;
-
 import static org.junit.jupiter.api.Assertions.*;
 
 public class MoneyTest {
